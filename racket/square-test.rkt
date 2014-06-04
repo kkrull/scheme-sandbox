@@ -1,6 +1,12 @@
 #lang racket/base
 
-(require rackunit "square.rkt")
+(require rackunit rackunit/text-ui)
+(require "square.rkt")
 
-(check-equal? (square-me 2) 4 "Squares a positive number")
-(check-equal? (square-me -3) 9 "Squares a negative number")
+(define square-tests
+  (test-suite "square-me"
+    (test-case "returns the square of the number"
+      (check-equal? (square-me 2) 4)
+      (check-equal? (square-me -3) 9))))
+
+(run-tests square-tests)
