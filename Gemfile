@@ -1,3 +1,7 @@
 source 'https://www.rubygems.org'
-gem "guard"
-gem 'guard-rackunit'
+
+group :development do
+  gem 'guard'
+  gem 'guard-rackunit'
+  gem 'rb-readline'
+end
